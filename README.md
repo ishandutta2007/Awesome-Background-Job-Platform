@@ -28,7 +28,7 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
-- [SaaS/Hosted Platforms](#saas-products)
+- [SaaS/Hosted Platforms](#saashosted-platforms)
 
 - [Open-Source GitHub Projects](#open-source-github-projects)
 
@@ -40,63 +40,18 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## SaaS/Hosted Platforms
 
-- **[Trigger.dev](https://trigger.dev/)**  
-
-  TypeScript-first background jobs and AI workflow platform with long-running task support, checkpoint-resume, and excellent developer experience (open-source core available).
-
-
-
-- **[Inngest](https://www.inngest.com/)**  
-
-  Event-driven durable functions and step-workflow platform that runs on your existing infrastructure or managed cloud, with strong TypeScript/Python support.
-
-
-
-- **[Hatchet](https://hatchet.run/)**  
-
-  High-throughput open-source task orchestration platform focused on reliability, concurrency control, and AI/data pipelines (managed offering available).
-
-
-
-- **[Temporal Cloud](https://temporal.io/)**  
-
-  Managed service of the Temporal workflow engine — the enterprise standard for durable, long-running, multi-language orchestration.
-
-
-
-- **[QStash (Upstash)](https://upstash.com/qstash)**  
-
-  Serverless message queue and scheduling service designed for HTTP-based background jobs and durable workflows.
-
-
-
-- **[Google Cloud Tasks](https://cloud.google.com/tasks)**  
-
-  Fully managed task queue service for asynchronous execution of HTTP or App Engine tasks on Google Cloud.
-
-
-
-- **[Sidekiq Enterprise](https://sidekiq.org/)**  
-
-  Commercial offering built on the popular open-source Sidekiq Ruby background job framework, adding advanced features and support.
-
-
-
-- **[BullMQ Pro](https://bullmq.io/)**  
-
-  Commercial enhancements and support for the widely used open-source BullMQ Redis-based job queue.
-
-
-
-- **[IronWorker](https://www.iron.io/)**  
-
-  Cloud-based background job and worker platform supporting multiple languages and containerized workloads.
-
-
-
-- **[Restate](https://restate.dev/)**  
-
-  Durable execution and workflow platform focused on reliability, recovery, and developer-friendly orchestration primitives.
+| Platform | Description | Starting Price | Free Tier / Trial Limit |
+| :--- | :--- | :--- | :--- |
+| **[Trigger.dev](https://trigger.dev/)** | TypeScript-first background jobs and AI workflow platform with long-running task support, checkpoint-resume, and real-time observability. | **$10/month** (Hobby plan, includes $10 usage credits; $0.25/10k runs + compute) | **$5/month usage credits**, 20 concurrent prod runs (25 dev), 10,000 queued tasks, 1,500 API req/min |
+| **[Inngest](https://www.inngest.com/)** | Event-driven durable functions and step-workflow platform running on existing infrastructure or cloud with multi-language SDKs. | **$99/month** (Pro plan, includes 1M executions, 100+ concurrent steps) | **50,000 executions/month**, 5 concurrent steps, 24-hour trace history, 1-hour event lookback |
+| **[Hatchet](https://hatchet.run/)** | High-throughput distributed task orchestration platform focused on low latency, concurrency control, and AI/data pipelines. | **$500/month** (Team plan; $10 per 1M task runs overage) | **100,000 task runs/month**, full API/SDK access, web dashboard (Free Developer tier) |
+| **[Temporal Cloud](https://temporal.io/)** | Fully managed service for Temporal's durable workflow engine, providing enterprise-grade multi-language orchestration. | **$100/month** (Essentials plan, includes 1M Actions, 1 GB Active Storage, 40 GB Retained Storage) | **30-day Free Trial with $1,000 in usage credits** (no perpetual free tier; $6k credits for qualifying startups) |
+| **[QStash (Upstash)](https://upstash.com/qstash)** | Serverless message queue and scheduler designed for HTTP-based background jobs, pub/sub, and durable workflow endpoints. | **$1.00 per 100k messages** (Pay-as-you-go; fixed plans start at $180/month) | **500 messages/day** (free forever, 100 KB max message payload) |
+| **[Google Cloud Tasks](https://cloud.google.com/tasks)** | Fully managed distributed task execution queue for asynchronous execution of HTTP and App Engine targets at Google scale. | **$0.40 per 1,000,000 operations** (after free monthly quota) | **1,000,000 billable operations/month free** (in 32 KB chunk increments) |
+| **[Sidekiq Enterprise](https://sidekiq.org/)** | Commercial multi-threaded background job framework for Ruby adding rolling deployments, unique jobs, and rate limiting. | **$99/month** (Pro) / **$269/month** (Enterprise, 100 production worker threads) | **No free hosted tier**; 30-day money-back guarantee / full refund policy for evaluation (open-source core is free) |
+| **[BullMQ Pro](https://bullmq.io/)** | Enterprise-grade Redis/Postgres job queue engine adding grouping, batching, observables, and priority streams. | **$139/month** (or $1,395/year per organization license) | **14-day Free Trial** (requestable trial token; open-source core is free & unlimited) |
+| **[IronWorker](https://www.iron.io/)** | Multi-language containerized cloud worker platform for scheduled jobs, heavy processing, and event-driven workloads. | **$29/month** (Basic with +1 concurrency add-on) / **$169/month** (Standard public cluster) | **Free Basic plan** (1 concurrency, 5 hours/month, 512 MB RAM, 30-min runtime, 50 tasks) + 14-day free trial on paid plans |
+| **[Restate](https://restate.dev/)** | Durable execution and workflow runtime providing resilient state machines, virtual actors, and event-driven services. | **$75/month** (Paid tier with volume discounts; BYOC reserved capacity available) | **50,000 durable actions/month**, 2 environments per user (no credit card required) |
 
 
 
