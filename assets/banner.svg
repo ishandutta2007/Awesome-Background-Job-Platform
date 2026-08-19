@@ -1,0 +1,185 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%" style="background:#090d16; border-radius: 16px; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a10" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa">
+        <animate attributeName="stop-color" values="#60a5fa; #a78bfa; #38bdf8; #818cf8; #60a5fa" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#c084fc">
+        <animate attributeName="stop-color" values="#c084fc; #f472b6; #818cf8; #38bdf8; #c084fc" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8; #60a5fa; #c084fc; #f472b6; #38bdf8" dur="8s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -1000;
+        }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 12px #818cf8); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      .anim-dash {
+        stroke-dasharray: 12, 12;
+        animation: dash 25s linear infinite;
+      }
+      .anim-dash-fast {
+        stroke-dasharray: 8, 8;
+        animation: dash 12s linear infinite;
+      }
+      .node-pulse {
+        animation: pulse 3s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .float-box {
+        animation: float 4s ease-in-out infinite;
+      }
+      .float-box-delay {
+        animation: float 4s ease-in-out infinite 2s;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- Animated Background Grid Pattern -->
+  <g opacity="0.12">
+    <path d="M 0 50 L 1200 50 M 0 100 L 1200 100 M 0 150 L 1200 150 M 0 200 L 1200 200 M 0 250 L 1200 250 M 0 300 L 1200 300 M 0 350 L 1200 350" stroke="#60a5fa" stroke-width="1" />
+    <path d="M 100 0 L 100 400 M 200 0 L 200 400 M 300 0 L 300 400 M 400 0 L 400 400 M 500 0 L 500 400 M 600 0 L 600 400 M 700 0 L 700 400 M 800 0 L 800 400 M 900 0 L 900 400 M 1000 0 L 1000 400 M 1100 0 L 1100 400" stroke="#60a5fa" stroke-width="1" />
+  </g>
+
+  <!-- Animated Circuit / Workflow Pipelines -->
+  <g fill="none">
+    <path d="M 50 200 C 250 120, 350 280, 600 200 C 850 120, 950 280, 1150 200" stroke="#3b82f6" stroke-width="3" opacity="0.3" />
+    <path d="M 50 200 C 250 120, 350 280, 600 200 C 850 120, 950 280, 1150 200" stroke="url(#textGrad)" stroke-width="3" class="anim-dash" />
+
+    <path d="M 150 80 Q 400 20, 600 80 T 1050 80" stroke="#8b5cf6" stroke-width="2" opacity="0.25" />
+    <path d="M 150 80 Q 400 20, 600 80 T 1050 80" stroke="#8b5cf6" stroke-width="2" class="anim-dash-fast" />
+
+    <path d="M 150 320 Q 400 380, 600 320 T 1050 320" stroke="#ec4899" stroke-width="2" opacity="0.25" />
+    <path d="M 150 320 Q 400 380, 600 320 T 1050 320" stroke="#ec4899" stroke-width="2" class="anim-dash-fast" />
+  </g>
+
+  <!-- Flowing Packets / Jobs Moving through Queue -->
+  <circle r="5" fill="#38bdf8" filter="url(#pulseGlow)">
+    <animateMotion path="M 50 200 C 250 120, 350 280, 600 200 C 850 120, 950 280, 1150 200" dur="6s" repeatCount="indefinite" />
+  </circle>
+  <circle r="4" fill="#ec4899" filter="url(#pulseGlow)">
+    <animateMotion path="M 50 200 C 250 120, 350 280, 600 200 C 850 120, 950 280, 1150 200" dur="6s" begin="2s" repeatCount="indefinite" />
+  </circle>
+  <circle r="4.5" fill="#a78bfa" filter="url(#pulseGlow)">
+    <animateMotion path="M 50 200 C 250 120, 350 280, 600 200 C 850 120, 950 280, 1150 200" dur="6s" begin="4s" repeatCount="indefinite" />
+  </circle>
+  <circle r="3.5" fill="#34d399" filter="url(#pulseGlow)">
+    <animateMotion path="M 150 80 Q 400 20, 600 80 T 1050 80" dur="4.5s" repeatCount="indefinite" />
+  </circle>
+  <circle r="3.5" fill="#f59e0b" filter="url(#pulseGlow)">
+    <animateMotion path="M 150 320 Q 400 380, 600 320 T 1050 320" dur="5s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Left Queue Visual Card -->
+  <g class="float-box" transform="translate(60, 110)">
+    <rect width="180" height="180" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    <text x="20" y="36" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="1">TASK QUEUE</text>
+    <rect x="20" y="52" width="140" height="26" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1" />
+    <circle cx="34" cy="65" r="4" fill="#34d399" />
+    <text x="48" y="69" fill="#f1f5f9" font-size="11" font-weight="500">job.process_ai()</text>
+
+    <rect x="20" y="86" width="140" height="26" rx="6" fill="#1e293b" stroke="#6366f1" stroke-width="1" />
+    <circle cx="34" cy="99" r="4" fill="#60a5fa" />
+    <text x="48" y="103" fill="#f1f5f9" font-size="11" font-weight="500">workflow.step_2()</text>
+
+    <rect x="20" y="120" width="140" height="26" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1" />
+    <circle cx="34" cy="133" r="4" fill="#f43f5e" />
+    <text x="48" y="137" fill="#f1f5f9" font-size="11" font-weight="500">email.retry(3x)</text>
+
+    <text x="20" y="165" fill="#38bdf8" font-size="11" font-weight="600">⚡ 10k ops/sec active</text>
+  </g>
+
+  <!-- Right Workflow State Engine Card -->
+  <g class="float-box-delay" transform="translate(960, 110)">
+    <rect width="180" height="180" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    <text x="20" y="36" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="1">DURABLE STATE</text>
+    
+    <g transform="translate(20, 52)">
+      <circle cx="12" cy="12" r="10" fill="#10b981" opacity="0.2" />
+      <circle cx="12" cy="12" r="5" fill="#10b981" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="12" font-weight="500">State Persisted</text>
+    </g>
+
+    <g transform="translate(20, 84)">
+      <circle cx="12" cy="12" r="10" fill="#8b5cf6" opacity="0.2" />
+      <circle cx="12" cy="12" r="5" fill="#8b5cf6" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="12" font-weight="500">Zero Lost Jobs</text>
+    </g>
+
+    <g transform="translate(20, 116)">
+      <circle cx="12" cy="12" r="10" fill="#38bdf8" opacity="0.2" />
+      <circle cx="12" cy="12" r="5" fill="#38bdf8" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="12" font-weight="500">Auto-Checkpoint</text>
+    </g>
+
+    <text x="20" y="165" fill="#a78bfa" font-size="11" font-weight="600">🛡️ Fault Tolerant</text>
+  </g>
+
+  <!-- Center Title and Subtitle Content -->
+  <g text-anchor="middle">
+    <rect x="475" y="48" width="250" height="28" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="600" y="67" fill="#38bdf8" font-size="12" font-weight="600" letter-spacing="1.5">⚡ CURATED ECOSYSTEM</text>
+
+    <text x="600" y="140" fill="url(#textGrad)" font-size="42" font-weight="800" letter-spacing="-0.5" filter="url(#glow)">Awesome Background Jobs</text>
+
+    <text x="600" y="180" fill="#cbd5e1" font-size="17" font-weight="400">Durable Execution • Task Queues • Distributed Workflows • Schedulers</text>
+
+    <g transform="translate(300, 220)">
+      <rect x="0" y="0" width="110" height="32" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+      <text x="55" y="20" fill="#a5b4fc" font-size="12" font-weight="600">🚀 SaaS Leaders</text>
+
+      <rect x="125" y="0" width="125" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+      <text x="187.5" y="20" fill="#6ee7b7" font-size="12" font-weight="600">📦 Open Source</text>
+
+      <rect x="265" y="0" width="150" height="32" rx="8" fill="#4a044e" stroke="#d946ef" stroke-width="1" />
+      <text x="340" y="20" fill="#f0abfc" font-size="12" font-weight="600">🔄 Durable Workflows</text>
+
+      <rect x="430" y="0" width="170" height="32" rx="8" fill="#0c4a6e" stroke="#0ea5e9" stroke-width="1" />
+      <text x="515" y="20" fill="#7dd3fc" font-size="12" font-weight="600">📊 Pricing &amp; Star Matrix</text>
+    </g>
+
+    <circle cx="510" cy="340" r="5" fill="#22c55e" class="node-pulse" />
+    <text x="600" y="344" fill="#94a3b8" font-size="13" font-weight="500">Updated for 2026 • Community Maintained</text>
+  </g>
+</svg>
